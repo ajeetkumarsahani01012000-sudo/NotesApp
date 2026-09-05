@@ -1,0 +1,11 @@
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#FF2196F3</color>
+    <color name="red">#FFF44336</color>
+    <color name="green">#FF4CAF50</color>
+    <color name="yellow">#FFFFEB3B</color>
+    <color name="purple">#FF9C27B0</color>
+    <color name="toolbar_bg">#FF212121</color>
+    <color name="background">#FFF5F5F5</color>
+</resources>
