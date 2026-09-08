@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_bg"
+        app:titleTextColor="@color/white" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <Button android:id="@+id/btnPen" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✏ Pen" />
+
+            <Button android:id="@+id/btnHighlighter" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🖊 Highlighter" />
+
+            <Button android:id="@+id/btnEraser" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🧹 Eraser" />
+
+            <Button android:id="@+id/btnUndo" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="↩ Undo" />
+
+            <Button android:id="@+id/btnRedo" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="↪ Redo" />
+
+            <Button android:id="@+id/btnClear" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🗑 Clear" />
+
+            <Button android:id="@+id/btnStylusOnly" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✒ Stylus Only: Off" />
+
+            <Button android:id="@+id/btnImportPdf" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📥 Import PDF" />
+
+            <Button android:id="@+id/btnExportPdf" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📤 Export PDF" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#E0E0E0"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <Button android:id="@+id/btnPrevPage" style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="◀ Prev" />
+
+        <TextView
+            android:id="@+id/tvPageIndicator"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Page 1/1"
+            android:textStyle="bold" />
+
+        <Button android:id="@+id/btnNextPage" style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Next ▶" />
+
+        <Button android:id="@+id/btnAddPage" style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+ Page" />
+
+        <Button android:id="@+id/btnDeletePage" style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🗑 Page" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F5F5F5"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <View android:id="@+id/colorBlack" android:layout_width="28dp" android:layout_height="28dp" android:layout_margin="4dp" android:background="@color/black" />
+        <View android:id="@+id/colorRed" android:layout_width="28dp" android:layout_height="28dp" android:layout_margin="4dp" android:background="@color/red" />
+        <View android:id="@+id/colorBlue" android:layout_width="28dp" android:layout_height="28dp" android:layout_margin="4dp" android:background="@color/blue" />
+        <View android:id="@+id/colorGreen" android:layout_width="28dp" android:layout_height="28dp" android:layout_margin="4dp" android:background="@color/green" />
+        <View android:id="@+id/colorYellow" android:layout_width="28dp" android:layout_height="28dp" android:layout_margin="4dp" android:background="@color/yellow" />
+        <View android:id="@+id/colorPurple" android:layout_width="28dp" android:layout_height="28dp" android:layout_margin="4dp" android:background="@color/purple" />
+
+        <SeekBar
+            android:id="@+id/seekBarWidth"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:max="30"
+            android:progress="6" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.example.noteapp.ui.DrawingView
+            android:id="@+id/drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+    </FrameLayout>
+
+</LinearLayout>
